@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0e12">
+  <meta name="description" content="REP — Ton carnet de musculation. Programme Basic-Fit, calendrier, progression, minuteur et photos. Fonctionne hors-ligne.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="REP Muscu">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="./styles.css">
+  <title>REP — Mon entraînement</title>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-left"></div>
+  <div class="ambient ambient-right"></div>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand" role="img" aria-label="REP Muscu"><span class="brand-mark">R<span class="brand-dot">.</span></span><span class="brand-text">REP<span class="brand-mini">/ MUSCU</span></span></div>
+      <div class="topbar-right"><span id="topbar-date"></span><button class="icon-button topbar-settings" data-action="navigate" data-view="settings" aria-label="Réglages"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06-2 2-.06-.06A1.7 1.7 0 0 0 15.87 18.5a1.7 1.7 0 0 0-1.37 1.66v.34h-3v-.34a1.7 1.7 0 0 0-1.37-1.66 1.7 1.7 0 0 0-1.87.34l-.06.06-2-2 .06-.06A1.7 1.7 0 0 0 6.6 15a1.7 1.7 0 0 0-1.66-1.37H4.6v-3h.34A1.7 1.7 0 0 0 6.6 9.26a1.7 1.7 0 0 0-.34-1.87L6.2 7.33l2-2 .06.06a1.7 1.7 0 0 0 1.87.34 1.7 1.7 0 0 0 1.37-1.66v-.34h3v.34a1.7 1.7 0 0 0 1.37 1.66 1.7 1.7 0 0 0 1.87-.34l.06-.06 2 2-.06.06A1.7 1.7 0 0 0 19.4 9.26a1.7 1.7 0 0 0 1.66 1.37h.34v3h-.34A1.7 1.7 0 0 0 19.4 15Z"/></svg></button></div>
+    </header>
+    <main id="view" class="view" aria-live="polite"></main>
+    <nav class="bottom-nav" aria-label="Navigation principale">
+      <button data-action="navigate" data-view="today" class="nav-item active" aria-label="Aujourd'hui"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></svg></span><span>Accueil</span></button>
+      <button data-action="navigate" data-view="calendar" class="nav-item" aria-label="Calendrier"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18"/></svg></span><span>Calendrier</span></button>
+      <button data-action="navigate" data-view="progress" class="nav-item" aria-label="Progression"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="m3 17 6-6 4 4 8-9"/><path d="M16 6h5v5"/></svg></span><span>Progrès</span></button>
+      <button data-action="navigate" data-view="photos" class="nav-item" aria-label="Mes photos"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></span><span>Photos</span></button>
+      <button data-action="navigate" data-view="settings" class="nav-item" aria-label="Réglages"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06-2 2-.06-.06A1.7 1.7 0 0 0 15.87 18.5a1.7 1.7 0 0 0-1.37 1.66v.34h-3v-.34a1.7 1.7 0 0 0-1.37-1.66 1.7 1.7 0 0 0-1.87.34l-.06.06-2-2 .06-.06A1.7 1.7 0 0 0 6.6 15a1.7 1.7 0 0 0-1.66-1.37H4.6v-3h.34A1.7 1.7 0 0 0 6.6 9.26a1.7 1.7 0 0 0-.34-1.87L6.2 7.33l2-2 .06.06a1.7 1.7 0 0 0 1.87.34 1.7 1.7 0 0 0 1.37-1.66v-.34h3v.34a1.7 1.7 0 0 0 1.37 1.66 1.7 1.7 0 0 0 1.87-.34l.06-.06 2 2-.06.06A1.7 1.7 0 0 0 19.4 9.26a1.7 1.7 0 0 0 1.66 1.37h.34v3h-.34A1.7 1.7 0 0 0 19.4 15Z"/></svg></span><span>Réglages</span></button>
+    </nav>
+  </div>
+  <div id="timer-panel" class="timer-panel" aria-live="polite"></div>
+  <div id="modal-host"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <input id="photo-input" type="file" accept="image/*" class="visually-hidden">
+  <input id="import-input" type="file" accept="application/json,.json" class="visually-hidden">
+</body>
+</html>
